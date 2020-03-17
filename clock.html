@@ -1,0 +1,50 @@
+<html>
+<head>
+<script>
+
+
+function clockTime()
+{
+
+var todaydate=new Date();	//new is keyword, date predefined class
+var hrs=todaydate.getHours();	//getHours is predefined function to retrieve hour
+var min=todaydate.getMinutes();
+var sec=todaydate.getSeconds();
+
+min=check(min); // another user defined function called to check min
+sec=check(sec);
+document.getElementById("clock").innerHTML=hrs+":"+min+":"+sec
+//innerHTML is used to refresh small portion of window i.e. div tag
+
+t=setTimeout('clockTime()',1000)
+//setTimeout is used to update clock at every sec.1000=1 sec
+
+}
+
+function check(t)
+{
+
+if(t<10)
+{
+t="0"+t;
+
+}
+return t;
+}
+</script>
+
+</head>
+<body onload="clockTime()">
+
+<div id="clock">
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
